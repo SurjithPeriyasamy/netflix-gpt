@@ -3,7 +3,20 @@
 - create-react-app
 - Configure tailwindcss
 - install react-router-dom
+- Header
+- Router of app
 - Login page
+- Form Validation
+- useRef Hook
+- Firebase setup
+- Deploy app to production
+- Create signup user account
+- Implement sigin user Api
+- Created Redux store with userSlice
+- Update profile
+- Implemented signOut
+- We can't redirect to the /browse page by changing url without login
+- Unsubscribed to the onAuthStateChanged callback
 
 # Features
 
