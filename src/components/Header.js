@@ -49,14 +49,16 @@ const Header = () => {
   };
 
   return (
-    <div className="px-3 pt-1 flex justify-between items-center">
+    <div className="px-3 pt-1 flex justify-between items-center ">
       <div className="  ">
         <img className="w-52" alt="logo" src={LOGO} />
       </div>
       {user && (
         <div className="flex gap-1">
           <img className="w-14" alt="userimage" src={user.photoURL} />
-          <button onClick={handleSignOut}>Sign out</button>
+          <button className="text-white" onClick={handleSignOut}>
+            Sign out
+          </button>
         </div>
       )}
     </div>

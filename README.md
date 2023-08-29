@@ -17,6 +17,10 @@
 - Implemented signOut
 - We can't redirect to the /browse page by changing url without login
 - Unsubscribed to the onAuthStateChanged callback
+- Register TMDB API & create an app & get access token
+- Get data from TMDB now playing movies list API
+- Create custom hook for nowPlayingMovies(TMDB API)
+- fetch data & embedded the Youtube Video for trailer video and make it autoplay,mute and loop
 
 # Features
 
