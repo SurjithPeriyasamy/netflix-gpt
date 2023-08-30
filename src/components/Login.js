@@ -9,7 +9,7 @@ import {
 import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
-import { USER_IMAGE } from "../utils/constants";
+import { BACKGROUND_IMAGE, USER_IMAGE } from "../utils/constants";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -89,7 +89,7 @@ const Login = () => {
   };
 
   return (
-    <div className=" h-screen bg-[url('https://assets.nflxext.com/ffe/siteui/vlv3/00103100-5b45-4d4f-af32-342649f1bda5/64774cd8-5c3a-4823-a0bb-1610d6971bd4/IN-en-20230821-popsignuptwoweeks-perspective_alpha_website_large.jpg')]">
+    <div className={" h-screen bg-[url('" + BACKGROUND_IMAGE + "')]"}>
       <div className="bg-black bg-opacity-50 h-screen">
         <Header />
         <form

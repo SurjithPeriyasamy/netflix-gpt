@@ -21,8 +21,10 @@
 - Get data from TMDB now playing movies list API
 - Create custom hook for nowPlayingMovies(TMDB API)
 - fetch data & embedded the Youtube Video for trailer video and make it autoplay,mute and loop
-- Get API data of popular,top rated and upcoming movies for SecondaryContainer
+- Get API data of popular,top rated and upcoming movies(custom hooks) for SecondaryContainer
 - install -d tailwind-scrollbar and configure plugin
+- GPT Search page
+- Multi-language feature
 
 # Features
 
