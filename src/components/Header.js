@@ -50,7 +50,7 @@ const Header = () => {
 
   return (
     <div className="px-3 pt-1 flex justify-between items-center ">
-      <div className="  ">
+      <div>
         <img className="w-52" alt="logo" src={LOGO} />
       </div>
       {user && (
