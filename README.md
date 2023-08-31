@@ -25,6 +25,7 @@
 - install -d tailwind-scrollbar and configure plugin
 - GPT Search page
 - Multi-language feature
+- gpt search results
 
 # Features
 

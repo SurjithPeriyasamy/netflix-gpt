@@ -89,10 +89,12 @@ const Login = () => {
   };
 
   return (
-    <div className={" h-screen bg-[url('" + BACKGROUND_IMAGE + "')]"}>
+    //bg-netflix-background extend in tailwind.config.js
+    <div className={"h-screen bg-netflix-background"}>
       <div className="bg-black bg-opacity-50 h-screen">
         <Header />
         <form
+          id="login"
           onSubmit={(e) => handleForm(e)}
           className="text-white w-[440px] m-auto rounded-lg p-16 gap-y-4 bg-black bg-opacity-70 flex shrink-0 flex-col"
         >

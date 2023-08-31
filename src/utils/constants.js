@@ -8,13 +8,12 @@ export const API_OPTIONS = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0Y2E5YjFmOWZkYTYwNDc2ZTg5YmEzZWRkYzI3NzdjNSIsInN1YiI6IjY0ZWMzYmQyNDU4MTk5MDBjNmY5NGZlYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.hcExGgZzgGmkYRXK4C4p0MLMqj5Ppm9ygLFm8l1aDFU",
+    Authorization: "Bearer " + process.env.REACT_APP_TMDB_KEY,
   },
 };
 
 export const BACKGROUND_IMAGE =
-  "https://assets.nflxext.com/ffe/siteui/vlv3/00103100-5b45-4d4f-af32-342649f1bda5/64774cd8-5c3a-4823-a0bb-1610d6971bd4/IN-en-20230821-popsignuptwoweeks-perspective_alpha_website_large.jpg";
+  "https://assets.nflxext.com/ffe/siteui/vlv3/855ed6e2-d9f1-4afd-90da-96023ec747c3/85eb5b91-25ed-4965-ace9-ba8e4a0ead8d/IN-en-20230828-popsignuptwoweeks-perspective_alpha_website_large.jpg";
 
 export const IMAGE_URL = "https://image.tmdb.org/t/p/w500";
 
@@ -23,4 +22,8 @@ export const SUPPORTED_LANGUAGES = [
   { identifier: "hindi", name: "Hindi" },
   { identifier: "french", name: "French" },
   { identifier: "tamil", name: "Tamil" },
+  { identifier: "malayalam", name: "malayalam" },
+  { identifier: "kannada", name: "kannada" },
 ];
+
+export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY;
