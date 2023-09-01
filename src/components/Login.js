@@ -9,7 +9,7 @@ import {
 import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
-import { BACKGROUND_IMAGE, USER_IMAGE } from "../utils/constants";
+import { USER_IMAGE } from "../utils/constants";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -96,7 +96,7 @@ const Login = () => {
         <form
           id="login"
           onSubmit={(e) => handleForm(e)}
-          className="text-white w-[440px] m-auto rounded-lg p-16 gap-y-4 bg-black bg-opacity-70 flex shrink-0 flex-col"
+          className="text-white mt-10 w-full sm:w-[440px] m-auto rounded-lg p-8 sm:p-16 gap-y-4 bg-black bg-opacity-70 flex shrink-0 flex-col"
         >
           <h1 className="text-3xl font-bold">
             {isSignInForm ? "Sign In" : "Sign Up"}

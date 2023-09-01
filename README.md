@@ -26,6 +26,8 @@
 - GPT Search page
 - Multi-language feature
 - gpt search results
+- make website as responsive
+- MovieDetail page
 
 # Features
 

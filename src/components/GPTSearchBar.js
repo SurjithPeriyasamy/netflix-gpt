@@ -40,15 +40,12 @@ export const GPTSearchBar = () => {
       // Error page
     }
     const gptMovieList = gptResults.choices?.[0]?.message?.content.split(",");
-    console.log(gptMovieList);
 
     //Search TMDB Api for each movie
     const promiseArray = gptMovieList.map((movie) => searchMovieTMDB(movie));
-    console.log(promiseArray);
 
     //[promise,promise,promise,promise,promsie]
     const tmdbResults = await Promise.all(promiseArray);
-    console.log(tmdbResults);
     dispatch(
       addGptMovieResult({ movieNames: gptMovieList, movieResults: tmdbResults })
     );
@@ -57,7 +54,7 @@ export const GPTSearchBar = () => {
     <form
       id="gptsearch"
       onSubmit={handleGptSearchClick}
-      className="bg-black p-5 mt-36 h-fit w-1/2 grid grid-cols-12"
+      className="bg-black p-2 md:mt-36 h-fit md:w-1/2 sm:w-3/4 grid grid-cols-12"
     >
       <input
         ref={searchText}

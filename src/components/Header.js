@@ -61,12 +61,12 @@ const Header = () => {
   };
 
   return (
-    <div className="px-3 pt-1 flex justify-between items-center ">
-      <div>
+    <div className="px-3 pt-1 flex flex-col md:flex-row md:justify-between">
+      <div className="m-auto md:m-0">
         <img className="w-52" alt="logo" src={LOGO} />
       </div>
       {user && (
-        <div className="flex gap-1">
+        <div className="flex justify-between md:gap-2">
           {showGpt && (
             <select
               onChange={handleLanguageChange}
@@ -87,12 +87,14 @@ const Header = () => {
             onClick={handleGptSearch}
             className="text-white font-semibold bg-cyan-600 self-center p-2 rounded-md"
           >
-            {showGpt ? "Go to homepage 🏠" : "GPT Search"}
+            {showGpt ? "Home 🏠" : "GPT Search"}
           </button>
-          <img className="w-14" alt="userimage" src={user.photoURL} />
-          <button className="text-white" onClick={handleSignOut}>
-            Sign out
-          </button>
+          <div className="flex items-center">
+            <img className="h-10" alt="userimage" src={user.photoURL} />
+            <button className="text-white" onClick={handleSignOut}>
+              Sign out
+            </button>
+          </div>
         </div>
       )}
     </div>

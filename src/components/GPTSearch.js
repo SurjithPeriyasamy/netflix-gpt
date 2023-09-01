@@ -10,18 +10,18 @@ const GPTSearch = () => {
     <div
       className={
         gptResults
-          ? " bg-contain bg-repeat-y bg-netflix-background"
+          ? "bg-repeat-y bg-netflix-background"
           : "h-screen bg-netflix-background"
       }
     >
       <div
         className={
           gptResults
-            ? "bg-black bg-opacity-70"
-            : "bg-black bg-opacity-70 h-screen"
+            ? "bg-black bg-opacity-50"
+            : "bg-black bg-opacity-50 h-screen"
         }
       >
-        <div className="flex flex-col items-center p-2">
+        <div className="flex flex-col sm:items-center p-2">
           <GPTSearchBar />
           <GPTMovieSuggestions />
         </div>

@@ -11,9 +11,9 @@ const VideoBackground = ({ movieId }) => {
       <iframe
         className="w-full aspect-video"
         src={
-          "https://www.youtube.com/embed/" +
+          "https://www.youtube-nocookie.com/embed/" +
           trailer.key +
-          "?playlist=" +
+          "?si=CSb3DUxCXpNsxo8o&amp;controls=0&playlist=" +
           trailer.key +
           "&controls=0&rel=0&autoplay=1&showinfo=0&loop=1&mute=1"
         }
