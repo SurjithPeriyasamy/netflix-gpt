@@ -1,7 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import MovieList from "./MovieList";
-
 const GPTMovieSuggestions = () => {
   const { movieNames, movieResults } = useSelector((store) => store.gpt);
   if (!movieNames) return null;

@@ -96,7 +96,7 @@ const Login = () => {
         <form
           id="login"
           onSubmit={(e) => handleForm(e)}
-          className="text-white mt-10 w-full sm:w-[440px] m-auto rounded-lg p-8 sm:p-16 gap-y-4 bg-black bg-opacity-70 flex shrink-0 flex-col"
+          className="text-white mt-10 sm:mt-20 mx-1 sm:w-[440px] sm:m-auto rounded-lg p-8 sm:p-16 gap-y-4 bg-black bg-opacity-70 flex flex-col"
         >
           <h1 className="text-3xl font-bold">
             {isSignInForm ? "Sign In" : "Sign Up"}

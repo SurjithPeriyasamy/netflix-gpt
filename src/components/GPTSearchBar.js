@@ -29,7 +29,7 @@ export const GPTSearchBar = () => {
     //Make an API call to GPT API and get Movie Results
 
     const gptQuery =
-      "Act as a movie recommendation system and suggest some movies of the query" +
+      "Act as a movie recommendation system and suggest some movies of the query.The query is" +
       searchText.current.value +
       ".only give me names of 5 movies,comma seperated like the example result given ahead.Example Result: Jailer,Don,Gadar,Takkar,Money Heist";
     const gptResults = await openai.chat.completions.create({

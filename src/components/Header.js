@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { LOGO, SUPPORTED_LANGUAGES } from "../utils/constants";
@@ -54,6 +54,7 @@ const Header = () => {
 
   const handleGptSearch = () => {
     dispatch(toggleGptSearchView());
+    showGpt ? navigate("/browse") : navigate("/browse/gpt");
   };
 
   const handleLanguageChange = (e) => {
@@ -63,7 +64,9 @@ const Header = () => {
   return (
     <div className="px-3 pt-1 flex flex-col md:flex-row md:justify-between">
       <div className="m-auto md:m-0">
-        <img className="w-52" alt="logo" src={LOGO} />
+        <Link to="/browse">
+          <img className="w-52" alt="logo" src={LOGO} />
+        </Link>
       </div>
       {user && (
         <div className="flex justify-between md:gap-2">

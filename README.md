@@ -28,6 +28,7 @@
 - gpt search results
 - make website as responsive
 - MovieDetail page
+- Cache the movieDetails page (reduce api calls)
 
 # Features
 

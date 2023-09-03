@@ -15,7 +15,7 @@ const VideoBackground = ({ movieId }) => {
           trailer.key +
           "?si=CSb3DUxCXpNsxo8o&amp;controls=0&playlist=" +
           trailer.key +
-          "&controls=0&rel=0&autoplay=1&showinfo=0&loop=1&mute=1"
+          "&rel=0&autoplay=1&showinfo=0&loop=1&mute=1"
         }
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

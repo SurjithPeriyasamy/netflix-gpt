@@ -4,7 +4,7 @@ import Login from "./Login";
 import Browse from "./Browse";
 import MovieDetails from "./MovieDetails";
 import MainBrowsePage from "./MainBrowsePage";
-
+import GPTSearch from "./GPTSearch";
 const Body = () => {
   const appRouter = createBrowserRouter([
     {
@@ -20,7 +20,11 @@ const Body = () => {
           element: <MainBrowsePage />,
         },
         {
-          path: "/browse/details",
+          path: "/browse/gpt",
+          element: <GPTSearch />,
+        },
+        {
+          path: "/browse/details/:movid",
           element: <MovieDetails />,
         },
       ],
