@@ -54,15 +54,15 @@ export const GPTSearchBar = () => {
     <form
       id="gptsearch"
       onSubmit={handleGptSearchClick}
-      className="bg-black p-2 md:mt-36 h-fit md:w-1/2 sm:w-3/4 grid grid-cols-12"
+      className="bg-black p-2 md:mt-36 h-fit md:w-1/2 sm:w-3/4 grid grid-rows-2 sm:grid-rows-none sm:grid-cols-12"
     >
       <input
         ref={searchText}
-        className=" col-span-9 p-2 pl-4 rounded-l-md focus:outline-none"
+        className=" sm:col-span-9 p-2 pl-4 rounded-l-md focus:outline-none"
         placeholder={language[langKey].searchPlaceholder + " ?"}
         type="text"
       />
-      <button className="col-span-3 font-semibold text-rose-100 bg-pink-600 rounded-r-md">
+      <button className="sm:col-span-3 px-3 mx-auto sm:mx-0 sm:place-self-auto font-semibold text-rose-100 bg-pink-600 sm:rounded-r-md">
         {language[langKey].search}
       </button>
     </form>

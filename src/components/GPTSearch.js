@@ -1,9 +1,11 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import GPTSearchBar from "./GPTSearchBar";
-import GPTMovieSuggestions from "./GPTMovieSuggestions";
+
 import { useSelector } from "react-redux";
+import LoadingUi from "./LoadingUi";
 
 const GPTSearch = () => {
+  const GPTMovieSuggestions = lazy(() => import("./GPTMovieSuggestions"));
   const gptResults = useSelector((store) => store.gpt.movieNames);
   return (
     //bg-netflix-background extend in tailwind.config.js
@@ -23,7 +25,9 @@ const GPTSearch = () => {
       >
         <div className="flex flex-col sm:items-center p-2">
           <GPTSearchBar />
-          <GPTMovieSuggestions />
+          <Suspense fallback={<LoadingUi />}>
+            <GPTMovieSuggestions />
+          </Suspense>
         </div>
       </div>
     </div>

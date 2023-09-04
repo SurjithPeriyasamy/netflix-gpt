@@ -44,9 +44,14 @@ const MovieDetails = () => {
       API_OPTIONS
     );
     const json = await data.json();
+    console.log(json);
     const filterData = json.results.filter((movie) => movie.type === "Trailer");
-    dispatch(addVideosCache({ [json.id]: filterData[0] }));
-    setVideos(filterData[0]);
+    dispatch(
+      addVideosCache({
+        [json.id]: filterData ? filterData[0] : json.results[0],
+      })
+    );
+    setVideos(filterData ? filterData[0] : json.results[0]);
   };
   if (!videoDetails) return <LoadingUi />;
   const {

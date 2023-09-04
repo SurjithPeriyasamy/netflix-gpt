@@ -25,7 +25,7 @@ const Login = () => {
   const handleForm = (e) => {
     e.preventDefault();
     const message = checkValidData(
-      //name.current.value,
+      !isSignInForm && name.current.value,
       email.current.value,
       password.current.value
     );
@@ -64,6 +64,7 @@ const Login = () => {
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
+
           setErrorMessage(errorCode + "-" + errorMessage);
         });
     } else {
@@ -75,11 +76,12 @@ const Login = () => {
       )
         .then((userCredential) => {
           const user = userCredential.user;
+          console.log(user);
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          setErrorMessage(errorCode + "-" + errorMessage);
+          setErrorMessage(errorMessage);
         });
     }
   };
@@ -90,8 +92,8 @@ const Login = () => {
 
   return (
     //bg-netflix-background extend in tailwind.config.js
-    <div className={"h-screen bg-netflix-background"}>
-      <div className="bg-black bg-opacity-50 h-screen">
+    <div className={"bg-netflix-background min-h-screen bg-repeat-y"}>
+      <div className="bg-black bg-opacity-50 min-h-screen">
         <Header />
         <form
           id="login"
