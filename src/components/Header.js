@@ -1,19 +1,27 @@
 import React, { useEffect } from "react";
-import { onAuthStateChanged, signOut } from "firebase/auth";
+import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { addUser, removeUser } from "../utils/userSlice";
+import {
+  addUser,
+  closeUserIcon,
+  removeUser,
+  toggleUserIcon,
+} from "../utils/userSlice";
 import { LOGO, SUPPORTED_LANGUAGES } from "../utils/constants";
 import { toggleGptSearchView } from "../utils/gptSlice";
 import { changeLanguage } from "../utils/configSlice";
+import UserProfile from "./UserProfile";
 
 const Header = () => {
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
 
-  const user = useSelector((store) => store.user);
+  const user = useSelector((store) => store.user.userDetail);
+
+  const userIcon = useSelector((store) => store.user.isUserIconOpen);
 
   const showGpt = useSelector((store) => store.gpt.showGptSearch);
 
@@ -41,19 +49,9 @@ const Header = () => {
     return () => unsubscribe();
   }, []);
 
-  const handleSignOut = () => {
-    signOut(auth)
-      .then(() => {
-        dispatch(removeUser());
-        navigate("/");
-      })
-      .catch((error) => {
-        navigate("/error");
-      });
-  };
-
   const handleGptSearch = () => {
     dispatch(toggleGptSearchView());
+    dispatch(closeUserIcon());
     showGpt ? navigate("/browse") : navigate("/browse/gpt");
   };
 
@@ -62,8 +60,8 @@ const Header = () => {
   };
 
   return (
-    <div className="px-3 pt-1 flex flex-col md:flex-row md:justify-between">
-      <div className="m-auto md:m-0">
+    <div className="px-3 pt-1 flex flex-col md:flex-row md:justify-between select-none">
+      <div onClick={() => dispatch(closeUserIcon())} className="m-auto md:m-0">
         <Link to="/browse">
           <img className="w-52" alt="logo" src={LOGO} />
         </Link>
@@ -92,11 +90,14 @@ const Header = () => {
           >
             {showGpt ? "Home 🏠" : "GPT Search"}
           </button>
-          <div className="flex items-center">
-            <img className="h-10" alt="userimage" src={user.photoURL} />
-            <button className="text-white" onClick={handleSignOut}>
-              Sign out
-            </button>
+          <div className="flex items-center relative">
+            <img
+              onClick={() => dispatch(toggleUserIcon())}
+              className="h-10 cursor-pointer"
+              alt="userimage"
+              src={user.photoURL}
+            />
+            {userIcon && <UserProfile />}
           </div>
         </div>
       )}
