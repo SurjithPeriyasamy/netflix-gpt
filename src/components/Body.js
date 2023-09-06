@@ -1,11 +1,13 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Login from "./Login";
 import Browse from "./Browse";
-import MovieDetails from "./MovieDetails";
 import MainBrowsePage from "./MainBrowsePage";
-import GPTSearch from "./GPTSearch";
+import LoadingUi from "./LoadingUi";
+
 const Body = () => {
+  const GPTSearch = lazy(() => import("./GPTSearch"));
+  const MovieDetails = lazy(() => import("./MovieDetails"));
   const appRouter = createBrowserRouter([
     {
       path: "/",
@@ -21,11 +23,19 @@ const Body = () => {
         },
         {
           path: "/browse/gpt",
-          element: <GPTSearch />,
+          element: (
+            <Suspense fallback={<LoadingUi />}>
+              <GPTSearch />
+            </Suspense>
+          ),
         },
         {
           path: "/browse/details/:movid",
-          element: <MovieDetails />,
+          element: (
+            <Suspense>
+              <MovieDetails />
+            </Suspense>
+          ),
         },
       ],
     },

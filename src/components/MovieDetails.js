@@ -17,13 +17,11 @@ const MovieDetails = () => {
     title,
     poster_path,
     homepage,
-    tagline,
     genres,
     imdb_id,
-    vote_count,
   } = videoDetails;
   return (
-    <div className="bg-netflix-background">
+    <div className="bg-netflix-background bg-repeat-y">
       <div className="bg-black bg-opacity-90 flex xl:justify-center">
         <div className="md:mt-24 lg:w-3/4 sm:flex sm:justify-center">
           <div className="px-10 flex flex-col">
