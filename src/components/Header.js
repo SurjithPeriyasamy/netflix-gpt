@@ -93,8 +93,8 @@ const Header = () => {
           <div className="flex items-center relative">
             <img
               onClick={() => dispatch(toggleUserIcon())}
-              className="h-10 cursor-pointer"
-              alt="userimage"
+              className="h-12 cursor-pointer rounded-full"
+              alt="userImage"
               src={user.photoURL}
             />
             {userIcon && <UserProfile />}

@@ -2,7 +2,7 @@ export const LOGO =
   "https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png";
 
 export const USER_IMAGE =
-  "https://cdn.icon-icons.com/icons2/1846/PNG/512/man16_116205.png";
+  "https://cdn-icons-png.flaticon.com/512/4222/4222071.png?ga=GA1.1.1981107671.1690793904";
 
 export const API_OPTIONS = {
   method: "GET",

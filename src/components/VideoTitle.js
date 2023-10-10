@@ -13,11 +13,11 @@ const VideoTitle = ({ title, overview, movieId }) => {
       )}
       <div className="flex gap-5 select-none ">
         <Link to={"/browse/details/" + movieId}>
-          <button className="flex items-center md:py-1 bg-white px-3 rounded-sm">
+          <button className="flex items-center md:py-2 bg-white px-3 rounded-sm">
             <img
-              className="h-8"
+              className="h-4"
               alt="playButton"
-              src="https://cdn.icon-icons.com/icons2/1132/PNG/512/1486348532-music-play-pause-control-go-arrow_80458.png"
+              src="https://cdn-icons-png.flaticon.com/512/27/27223.png?ga=GA1.1.1981107671.1690793904"
             />
             Play
           </button>
