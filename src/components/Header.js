@@ -10,20 +10,19 @@ import {
   toggleUserIcon,
 } from "../utils/userSlice";
 import { LOGO, SUPPORTED_LANGUAGES } from "../utils/constants";
-import { toggleGptSearchView } from "../utils/gptSlice";
 import { changeLanguage } from "../utils/configSlice";
 import UserProfile from "./UserProfile";
 
 const Header = () => {
   const navigate = useNavigate();
 
+  const isParamGpt = window.location.pathname === "/browse/gpt";
+
   const dispatch = useDispatch();
 
   const user = useSelector((store) => store.user.userDetail);
 
   const userIcon = useSelector((store) => store.user.isUserIconOpen);
-
-  const showGpt = useSelector((store) => store.gpt.showGptSearch);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -50,9 +49,8 @@ const Header = () => {
   }, []);
 
   const handleGptSearch = () => {
-    dispatch(toggleGptSearchView());
     dispatch(closeUserIcon());
-    showGpt ? navigate("/browse") : navigate("/browse/gpt");
+    isParamGpt ? navigate("/browse") : navigate("/browse/gpt");
   };
 
   const handleLanguageChange = (e) => {
@@ -68,17 +66,13 @@ const Header = () => {
       </div>
       {user && (
         <div className="flex justify-between md:gap-2">
-          {showGpt && (
+          {isParamGpt && (
             <select
               onChange={handleLanguageChange}
               className="self-center p-2 rounded-md text-white font-semibold  cursor-pointer focus:outline-none bg-teal-600"
             >
               {SUPPORTED_LANGUAGES.map((lang) => (
-                <option
-                  className=""
-                  key={lang.identifier}
-                  value={lang.identifier}
-                >
+                <option key={lang.identifier} value={lang.identifier}>
                   {lang.name}
                 </option>
               ))}
@@ -88,7 +82,7 @@ const Header = () => {
             onClick={handleGptSearch}
             className="text-white font-semibold bg-cyan-600 self-center p-2 rounded-md"
           >
-            {showGpt ? "Home 🏠" : "GPT Search"}
+            {isParamGpt ? "Home 🏠" : "GPT Search"}
           </button>
           <div className="flex items-center relative">
             <img

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 
 const VideoTitle = ({ title, overview, movieId }) => {
   const [moreInfo, setMoreInfo] = useState(true);
@@ -12,16 +11,14 @@ const VideoTitle = ({ title, overview, movieId }) => {
         </p>
       )}
       <div className="flex gap-5 select-none ">
-        <Link to={"/browse/details/" + movieId}>
-          <button className="flex items-center md:py-2 bg-white px-3 rounded-sm">
-            <img
-              className="h-4"
-              alt="playButton"
-              src="https://cdn-icons-png.flaticon.com/512/27/27223.png?ga=GA1.1.1981107671.1690793904"
-            />
-            Play
-          </button>
-        </Link>
+        <button className="flex items-center md:py-2 bg-white px-3 rounded-sm">
+          <img
+            className="h-4"
+            alt="playButton"
+            src="https://cdn-icons-png.flaticon.com/512/27/27223.png?ga=GA1.1.1981107671.1690793904"
+          />
+          Play
+        </button>
         <button
           onClick={() => (moreInfo ? setMoreInfo(false) : setMoreInfo(true))}
           className="hidden md:flex gap-2 items-center bg-gray-500 bg-opacity-60 md:py-2 text-white px-3 rounded-sm"

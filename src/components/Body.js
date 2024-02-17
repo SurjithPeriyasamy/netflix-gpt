@@ -6,8 +6,6 @@ import MainBrowsePage from "./MainBrowsePage";
 import LoadingUi from "./LoadingUi";
 
 const GPTSearch = lazy(() => import("./GPTSearch"));
-const MovieDetails = lazy(() => import("./MovieDetails"));
-
 const appRouter = createBrowserRouter([
   {
     path: "/",
@@ -26,14 +24,6 @@ const appRouter = createBrowserRouter([
         element: (
           <Suspense fallback={<LoadingUi />}>
             <GPTSearch />
-          </Suspense>
-        ),
-      },
-      {
-        path: "/browse/details/:movid",
-        element: (
-          <Suspense>
-            <MovieDetails />
           </Suspense>
         ),
       },

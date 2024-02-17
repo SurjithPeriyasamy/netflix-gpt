@@ -6,28 +6,31 @@ import {
   addVideosCache,
 } from "../utils/MoviesCacheSlice";
 
-export const useMovieDetails = (movid) => {
+export const useMovieDetails = () => {
   const [videos, setVideos] = useState(null);
   const [videoDetails, setVideoDetails] = useState(null);
 
   const dispatch = useDispatch();
 
-  const detailsCache = useSelector((store) => store.cache.videoDetailsCache);
-  const videosCache = useSelector((store) => store.cache.videosCache);
+  const {
+    videoDetailsCache: detailsCache,
+    videosCache,
+    videoId,
+  } = useSelector((store) => store.cache);
 
   useEffect(() => {
-    if (detailsCache[movid] && videosCache[movid]) {
-      setVideoDetails(detailsCache[movid]);
-      setVideos(videosCache[movid]);
+    if (detailsCache[videoId] && videosCache[videoId]) {
+      setVideoDetails(detailsCache[videoId]);
+      setVideos(videosCache[videoId]);
     } else {
       getMovieDetails();
       getDetailTrailer();
     }
-  }, []);
+  }, [videoId]);
 
   const getMovieDetails = async () => {
     const data = await fetch(
-      "https://api.themoviedb.org/3/movie/" + movid + "?language=en-US",
+      "https://api.themoviedb.org/3/movie/" + videoId + "?language=en-US",
       API_OPTIONS
     );
     const json = await data.json();
@@ -37,7 +40,9 @@ export const useMovieDetails = (movid) => {
 
   const getDetailTrailer = async () => {
     const data = await fetch(
-      "https://api.themoviedb.org/3/movie/" + movid + "/videos?language=en-US",
+      "https://api.themoviedb.org/3/movie/" +
+        videoId +
+        "/videos?language=en-US",
       API_OPTIONS
     );
     const json = await data.json();

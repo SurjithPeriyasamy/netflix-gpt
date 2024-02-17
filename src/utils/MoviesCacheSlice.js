@@ -5,6 +5,8 @@ const moviesCacheSlice = createSlice({
   initialState: {
     videoDetailsCache: {},
     videosCache: {},
+    videoId: null,
+    isShowDetail: false,
   },
   reducers: {
     addVideoDetailsCache: (state, action) => {
@@ -16,9 +18,23 @@ const moviesCacheSlice = createSlice({
     addVideosCache: (state, action) => {
       state.videosCache = { ...state.videosCache, ...action.payload };
     },
+    addVideoId: (state, action) => {
+      state.videoId = action.payload;
+    },
+    openDetail: (state) => {
+      state.isShowDetail = true;
+    },
+    closeDetail: (state) => {
+      state.isShowDetail = false;
+    },
   },
 });
 
 export default moviesCacheSlice.reducer;
-export const { addVideoDetailsCache, addVideosCache } =
-  moviesCacheSlice.actions;
+export const {
+  addVideoDetailsCache,
+  addVideosCache,
+  addVideoId,
+  closeDetail,
+  openDetail,
+} = moviesCacheSlice.actions;
