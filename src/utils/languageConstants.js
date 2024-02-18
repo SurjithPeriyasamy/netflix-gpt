@@ -44,6 +44,8 @@ const language = {
     search: "検索",
     searchPlaceholder: "今日は何を見たいですか",
     enterKey: "キーを入力してください",
+    getkey: "Open Aiキーを入手するには",
+    click: "ここをクリック",
     enterKeyPlaceHolder: "アクセスするには openAi キーを入力してください",
   },
 };

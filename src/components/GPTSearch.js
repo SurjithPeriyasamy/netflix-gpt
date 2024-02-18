@@ -65,7 +65,7 @@ const GPTSearch = () => {
                 <a
                   className="underline italic ml-1"
                   target="_blank"
-                  href="https://platform.openai.com/"
+                  href="https://platform.openai.com/api-keys"
                   rel="noreferrer"
                 >
                   {language[langKey].click}
