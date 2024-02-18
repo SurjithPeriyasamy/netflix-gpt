@@ -6,7 +6,7 @@ const VideoTitle = ({ title, overview, movieId }) => {
     <div className="mx-10 mt-[13%] sm:mt-[20%] flex flex-col gap-4 font-semibold">
       <h1 className="font-extrabold text-4xl text-white">{title}</h1>
       {moreInfo && (
-        <p className="hidden md:block md:w-1/2 lg:w-1/3 text-white">
+        <p className="hidden md:block md:w-1/2 xl:w-1/3 text-white">
           {overview}
         </p>
       )}

@@ -52,7 +52,7 @@ const GPTSearch = () => {
               >
                 <input
                   ref={aiKey}
-                  className="w-3/4 p-2 pl-5 placeholder:tracking-wide placeholder:font-semibold rounded-l-full focus:outline-none"
+                  className="w-3/4 p-2 pl-5 placeholder:tracking-wide placeholder:text-gray-500 placeholder:font-semibold rounded-l-full focus:outline-none"
                   type="text"
                   placeholder={language[langKey].enterKeyPlaceHolder}
                 />
@@ -60,7 +60,7 @@ const GPTSearch = () => {
                   {language[langKey].enterKey}
                 </button>
               </form>
-              <p className="text-white font-bold shadow-lg rounded-lg p-2 animate-pulse bg-red-700">
+              <p className="text-white text-center max-md:w-3/4 mx-auto font-bold shadow-lg rounded-lg p-2 animate-pulse bg-red-700">
                 {language[langKey].getKey}
                 <a
                   className="underline italic ml-1"

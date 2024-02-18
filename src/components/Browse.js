@@ -15,7 +15,7 @@ const Browse = () => {
   const dispatch = useDispatch();
   return (
     <div className="w-full">
-      <div className="md:fixed bg-black md:bg-transparent top-0 z-50 left-0 right-0">
+      <div className="lg:fixed bg-black lg:bg-transparent top-0 z-50 left-0 right-0">
         <Header />
       </div>
       <div onClick={() => dispatch(closeUserIcon())}>

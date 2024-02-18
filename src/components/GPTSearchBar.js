@@ -71,12 +71,12 @@ export const GPTSearchBar = ({ error, setError, openAiKey, setLoading }) => {
       <form
         id="gptsearch"
         onSubmit={handleGptSearchClick}
-        className="bg-black p-2 md:mt-36 h-fit md:w-1/2 sm:w-3/4 grid grid-rows-2 sm:grid-rows-none sm:grid-cols-12"
+        className=" p-2 md:mt-36 h-fit md:w-1/2 sm:w-3/4 grid grid-rows-2 sm:grid-rows-none sm:grid-cols-12"
       >
         <input
           value={openAiKey ? searchText : ""}
           onChange={(e) => setSearchText(e.target.value)}
-          className=" sm:col-span-9 p-2 pl-4 rounded-l-md focus:outline-none"
+          className=" sm:col-span-9 p-2 pl-4 rounded-l-md focus:outline-none placeholder:text-gray-500"
           placeholder={language[langKey].searchPlaceholder + " ?"}
           type="text"
         />
@@ -90,7 +90,12 @@ export const GPTSearchBar = ({ error, setError, openAiKey, setLoading }) => {
           Your Key Added Successfully
         </div>
       ) : (
-        <div className="bg-black text-red-500 px-2 py-1 rounded-b-lg md:w-1/2 text-center font-semibold">
+        <div
+          className={
+            (error && "bg-black") +
+            " text-red-500 px-2 py-1 rounded-b-lg md:w-1/2 text-center font-semibold"
+          }
+        >
           {error}
         </div>
       )}
