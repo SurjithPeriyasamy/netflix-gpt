@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const VideoTitle = ({ title, overview, movieId }) => {
+const VideoTitle = ({ title, overview }) => {
   const [moreInfo, setMoreInfo] = useState(true);
   return (
     <div className="mx-10 mt-[13%] sm:mt-[20%] flex flex-col gap-4 font-semibold">
